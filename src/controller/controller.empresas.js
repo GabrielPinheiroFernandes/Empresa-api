@@ -1,13 +1,15 @@
 import serviceEmpresas from "../service/service.empresas.js"
 
 async function ListEmpS(req,res) {   
+
     const empresas = await serviceEmpresas.ListEmpS();
-    
+
     return res.status(200).json(empresas)
     
 }
 
 async function ListEmp(req,res) {
+
 
     const ID_EMPRESA = req.params.ID_EMPRESA;
     
