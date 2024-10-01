@@ -26,7 +26,7 @@ Siga os passos abaixo para configurar e iniciar a API:
 
 ### 1. Clonar o Repositório
 
-git clone https://github.com/SEU-USUARIO/Empresa-api.git
+git clone https://github.com/GabrielPinheiroFernandes/Empresa-api.git
 cd Empresa-api
 
 ### 2. Instalar Dependências
@@ -72,4 +72,4 @@ Contribuições são sempre bem-vindas! Sinta-se à vontade para enviar pull req
 
 ---
 
-Feito com 💻 e ☕ por [Seu Nome].
+Feito com 💻 e ☕ por Gabriel Fernandes.
