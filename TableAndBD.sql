@@ -1,5 +1,4 @@
 -- --------------------------------------------------------
--- Servidor:                     fn01
 -- Versão do servidor:           10.11.2-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.3.0.6589
@@ -15,11 +14,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Copiando estrutura do banco de dados para teste_grupo_mbs
-CREATE DATABASE IF NOT EXISTS `teste_grupo_mbs` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */;
-USE `teste_grupo_mbs`;
+-- Copiando estrutura do banco de dados para MyDb
+CREATE DATABASE IF NOT EXISTS `MyDb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */;
+USE `MyDb`;
 
--- Copiando estrutura para tabela teste_grupo_mbs.empresa
+-- Copiando estrutura para tabela MyDb.empresa
 CREATE TABLE IF NOT EXISTS `empresa` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ID_RESPONSAVEL_SOCIO` int(11) NOT NULL,
@@ -59,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   KEY `FK_MATRIZ_EMPRESA` (`ID_MATRIZ`)
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_swedish_ci PACK_KEYS=0 COMMENT='Tabela com as empresas que utilizam o sistema. ERP multi-empresa.';
 
--- Copiando dados para a tabela teste_grupo_mbs.empresa: ~32 rows (aproximadamente)
+-- Copiando dados para a tabela MyDb.empresa: ~32 rows (aproximadamente)
 INSERT INTO `empresa` (`ID`, `ID_RESPONSAVEL_SOCIO`, `ID_MATRIZ`, `ID_SINDICATO_PATRONAL`, `ID_FPAS`, `ID_CONTADOR`, `RAZAO_SOCIAL`, `NOME_FANTASIA`, `CNPJ`, `INSCRICAO_ESTADUAL`, `INSCRICAO_ESTADUAL_ST`, `INSCRICAO_MUNICIPAL`, `INSCRICAO_JUNTA_COMERCIAL`, `DATA_INSC_JUNTA_COMERCIAL`, `TIPO`, `DATA_CADASTRO`, `DATA_INICIO_ATIVIDADES`, `SUFRAMA`, `EMAIL`, `IMAGEM_LOGOTIPO`, `CRT`, `TIPO_REGIME`, `ALIQUOTA_PIS`, `CONTATO`, `ALIQUOTA_COFINS`, `CODIGO_IBGE_CIDADE`, `CODIGO_IBGE_UF`, `CODIGO_TERCEIROS`, `CODIGO_GPS`, `ALIQUOTA_SAT`) VALUES
 	(1, 1, 1, 1, 1, 1, 'MBS RASTER LTDA', 'MBS RASTREAMENTO', '12345678000190', '12345678', NULL, NULL, '12345678', '2024-05-13', 'M', '2024-05-13', '2024-05-12', NULL, 'contato@mbsraster.com.br', NULL, '1', '3', NULL, '11987654321', NULL, NULL, NULL, NULL, NULL, NULL),
 	(2, 2, 1, 1, 1, 1, 'Tech Solutions LTDA', 'TechSol', '23456789000101', '23456789', NULL, NULL, '23456789', '2024-06-06', 'M', '2024-06-06', '2024-06-06', NULL, 'contato@techsol.com.br', NULL, '1', '3', NULL, '11987654322', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -94,7 +93,7 @@ INSERT INTO `empresa` (`ID`, `ID_RESPONSAVEL_SOCIO`, `ID_MATRIZ`, `ID_SINDICATO_
 	(38, 213, 2, 2, 2, 2, 'Ricardo Tecnologias 33', 'RicardoTecno', '12313213987921', '353543', '4534534', '453', '4534354343', '2024-10-01', 'M', '2024-10-01', '2024-10-01', '123213', 'marcioTec@hotmailcom', 'lockdaaws', '1', '3', 32123312.000000, '12313123213', 123112313123.000000, 1231323, 123, 2312313.000000, 123, 123131312.000000),
 	(39, 1, 1, 1, 1, 1, 'JoãoTech', 'Jão do frilas', '97924574000199', '654321987', '123456789012', '9876543210', '1234567890', '2024-10-02', 'M', '2024-10-02', '2024-10-02', '456789123', 'contato@jaodofrilas.com', 'https://example.com/logotipos/joao_do_frilas.png', '1', '1', 165.000000, '11987654321', NULL, 1234567, 12, 890123456.000000, 234567, NULL);
 
--- Copiando estrutura para tabela teste_grupo_mbs.usuario
+-- Copiando estrutura para tabela MyDb.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ID_COLABORADOR` int(11) NOT NULL,
@@ -106,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   KEY `FK_COLABORADOR_USUARIO` (`ID_COLABORADOR`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_swedish_ci PACK_KEYS=0 COMMENT='Tabela com os usuarios do sistema';
 
--- Copiando dados para a tabela teste_grupo_mbs.usuario: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela MyDb.usuario: ~2 rows (aproximadamente)
 INSERT INTO `usuario` (`ID`, `ID_COLABORADOR`, `LOGIN`, `SENHA`, `DATA_CADASTRO`, `ADMINISTRADOR`) VALUES
 	(1, 1, 'ADMIN', '123', '2024-05-13', 'S'),
 	(2, 1, 'XESQUEDALEN', '@!)#(IO@{!`#!@_$)I!@)($', '2024-06-21', 'S');
