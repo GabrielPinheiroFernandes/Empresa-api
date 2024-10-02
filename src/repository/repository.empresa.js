@@ -3,7 +3,7 @@ import mariadb from "./../database/Mariadb/mariadb.js"
 
 async function ListEmpS() {
 //    mariadb.DoteEnv();
-   const sql = `SELECT ID,RAZAO_SOCIAL,NOME_FANTASIA,CNPJ FROM EMPRESA `
+   const sql = `SELECT ID,RAZAO_SOCIAL,NOME_FANTASIA,CNPJ FROM EMPRESA  order by id desc`
 
    const empresas = await mariadb.executeQuery(sql,[])
    
