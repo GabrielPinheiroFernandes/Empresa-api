@@ -13,7 +13,23 @@ async function ListEmpS() {
 async function ListEmp(id_empresa) { 
     //    console.log(id_empresa)
 
-       const sql = `SELECT * FROM EMPRESA where ID = ?`
+    const sql = `
+    SELECT socio_pes.nome AS 'socioName',
+    mat.razao_social AS 'matrizRazaoSocial',
+    sindi_pes.nome AS 'sindicatoName',
+    fp.DESCRICAO AS 'descricaoFpas',
+    cont_pes.nome AS 'contadorName',
+    emp.*
+    FROM empresa emp
+    LEFT JOIN responsavel_socio resp_soci ON emp.ID_RESPONSAVEL_SOCIO = resp_soci.ID
+    LEFT JOIN pessoa socio_pes ON resp_soci.ID_PESSOA=socio_pes.ID
+    LEFT JOIN matriz mat ON emp.ID_MATRIZ = mat.ID
+    LEFT JOIN sindicato sind ON emp.ID_SINDICATO_PATRONAL = sind.ID
+    LEFT JOIN pessoa sindi_pes ON sind.ID_PESSOA=sindi_pes.ID
+    LEFT JOIN fpas fp ON emp.ID_FPAS = fp.ID
+    LEFT JOIN contador cont ON emp.ID_CONTADOR = cont.ID
+    LEFT JOIN pessoa cont_pes ON cont.ID_PESSOA=cont_pes.ID
+    WHERE emp.ID = ?`
     
        const empresa = await mariadb.executeQuery(sql,[id_empresa])
        
